@@ -8,7 +8,7 @@
         <version>3.5.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ai.agenticspring</groupId>
+    <groupId>dev.secureallthethingsbook</groupId>
     <artifactId>pipeline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pipeline</name>
