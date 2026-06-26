@@ -5,17 +5,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.1</version>
+        <version>3.5.7</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>sample-pipeline</artifactId>
+    <groupId>ai.agenticspring</groupId>
+    <artifactId>pipeline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sample-pipeline</name>
+    <name>pipeline</name>
 
     <properties>
-        <aws-java-sdk.version>1.12.352</aws-java-sdk.version>
-        <java.version>17</java.version>
+        <aws-java-sdk.version>1.12.792</aws-java-sdk.version>
+        <java.version>25</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -24,19 +24,15 @@
             <version>${aws-java-sdk.version}</version>
         </dependency>
         <dependency>
-            <version>${aws-java-sdk.version}</version>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-sts</artifactId>
+            <version>${aws-java-sdk.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
             <groupId>bootiful.asciidoctor</groupId>
             <artifactId>asciidoctor-publication-job</artifactId>
-            <version>0.0.4-SNAPSHOT</version>
+            <version>0.0.5-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
