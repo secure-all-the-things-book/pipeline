@@ -35,7 +35,7 @@ public class SamplePipelineApplication {
 	ApplicationListener<ApplicationReadyEvent> ready(Executor[] executor) {
 		return _ -> {
 			for (var e : executor)
-				System.out.println(e.toString());
+				IO.println(e.toString());
 		};
 	}
 
