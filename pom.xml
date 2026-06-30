@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>4.1.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
+        <!-- lookup parent from repository -->
     </parent>
     <groupId>dev.secureallthethingsbook</groupId>
     <artifactId>pipeline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pipeline</name>
-
     <properties>
         <aws-java-sdk.version>1.12.792</aws-java-sdk.version>
         <java.version>25</java.version>
     </properties>
     <dependencies>
-        
         <dependency>
             <artifactId>aws-java-sdk-s3</artifactId>
             <groupId>com.amazonaws</groupId>
@@ -29,7 +27,6 @@
             <artifactId>aws-java-sdk-sts</artifactId>
             <version>${aws-java-sdk.version}</version>
         </dependency>
-
         <dependency>
             <groupId>bootiful.asciidoctor</groupId>
             <artifactId>asciidoctor-publication-job</artifactId>
@@ -115,15 +112,12 @@
                                 <repoKey>libs-release-local</repoKey>
                                 <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
                             </publisher>
-
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
     <repositories>
         <repository>
             <snapshots>
@@ -164,5 +158,4 @@
             </url>
         </pluginRepository>
     </pluginRepositories>
-
 </project>
