@@ -15,6 +15,9 @@
     <properties>
         <aws-java-sdk.version>1.12.792</aws-java-sdk.version>
         <java.version>25</java.version>
+        <spring-ai.version>2.0.0</spring-ai.version>
+        <spring-cloud.version>2025.1.2</spring-cloud.version>
+        <spring-modulith.version>2.1.0</spring-modulith.version>
     </properties>
     <dependencies>
         <dependency>
