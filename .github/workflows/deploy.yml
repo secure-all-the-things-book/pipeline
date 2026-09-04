@@ -40,7 +40,7 @@ jobs:
           cache: "maven"
 
       - name: configure optimizer binaries
-        run: sudo apt install ghostscript  -y --no-install-recommends  && sudo apt-get install -y --no-install-recommends   && sudo gem install asciidoctor && sudo gem install asciidoctor-pdf  && sudo gem install rghost && which ghostscript && which asciidoctor-pdf-optimize
+        run: sudo apt install   -y --no-install-recommends ghostscript  && sudo apt-get install -y --no-install-recommends pandoc  && sudo gem install asciidoctor && sudo gem install asciidoctor-pdf  && sudo gem install rghost && which ghostscript && which asciidoctor-pdf-optimize
 
       - name: build and run
         run: .github/workflows/build.sh
