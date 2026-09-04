@@ -21,26 +21,45 @@ on:
   pull_request:
     branches: [ main ]
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
 
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
 
       - name: configure Kindlegen directory
-        run: mkdir -p $(dirname $KINDLEGEN ) && ls -la $(dirname $KINDLEGEN)
+        run: mkdir -p "$(dirname "$KINDLEGEN")" && ls -la "$(dirname "$KINDLEGEN")"
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
 
       - uses: graalvm/setup-graalvm@v1
         with:
           java-version: '25'
           distribution: 'graalvm-community' # Or 'graalvm-community'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          cache: 'maven'
 
       - name: configure optimizer binaries
-        run: sudo apt install -y --no-install-recommends ghostscript  && sudo apt-get install -y --no-install-recommends pandoc  && sudo gem install asciidoctor && sudo gem install asciidoctor-pdf  && sudo gem install rghost && which ghostscript && which asciidoctor-pdf-optimize
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ghostscript pandoc
+          sudo gem install asciidoctor asciidoctor-pdf rghost
+          which ghostscript
+          which asciidoctor-pdf-optimize
 
       - name: build and run
+        timeout-minutes: 45
         run: .github/workflows/build.sh
+
+      - name: upload pipeline log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-run-log
+          path: target/pipeline-run.log
+          if-no-files-found: ignore
