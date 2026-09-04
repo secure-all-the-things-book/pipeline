@@ -22,7 +22,6 @@ public class SamplePipelineApplication {
 	private static final Logger log = LoggerFactory.getLogger(SamplePipelineApplication.class);
 
 	static void main(String[] args) {
-		// SpringApplication.run(SamplePipelineApplication.class, args);
 		System.exit(SpringApplication.exit(SpringApplication.run(SamplePipelineApplication.class, args)));
 	}
 
