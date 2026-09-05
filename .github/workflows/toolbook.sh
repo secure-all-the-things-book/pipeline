@@ -8,7 +8,7 @@ export TOOLBOOK_API_URL=https://api.mytoolbook.ai
 
 # GitHub Actions step; chapter files are named like 01-preface.md
 auth=(-H "Authorization: Bearer $TOOLBOOK_API_KEY")
-base="$TOOLBOOK_API_URL/toolbooks/bootiful-spring-ai"
+base="$TOOLBOOK_API_URL/toolbooks/secure-all-the-things-with-spring-security"
 
 curl --fail-with-body -X DELETE "${auth[@]}" "$base/chapters"
 
