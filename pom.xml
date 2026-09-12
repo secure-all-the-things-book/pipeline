@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.secureallthethingsbook</groupId>
     <artifactId>pipeline</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>pipeline</name>
     <properties>
         <aws-java-sdk.version>1.12.792</aws-java-sdk.version>
